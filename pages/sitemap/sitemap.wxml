@@ -1,0 +1,9 @@
+<view class="sitemapView">
+    <swiper>
+        <block wx:for="{{imgUrls}}">
+            <swiper-item>
+                <image src="{{item}}"/>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
