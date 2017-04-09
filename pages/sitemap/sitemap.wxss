@@ -1,14 +1,44 @@
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
 .topHeader{
     width: 100%;
     height: 100rpx;
     background-color: #2759a4;
 }
 
-.topHeader image{
+.topHeader .left image{
     width: 200rpx;
-    height: 80rpx;
+    height: 60rpx;
     margin-top: 12rpx;
 }
+
+.topHeader .right image{
+    float: right;
+    width: 60rpx;
+    height: 60rpx;
+    margin-top: 20rpx;
+    margin-right: 10rpx;
+}
+
+.topHeader .vSearchBox{
+    margin-left: 210rpx;
+    margin-right: 80rpx;
+    padding-top: 8rpx;
+}
+
+.topHeader .vSearchBox input{
+    height: 80rpx;
+    background-color: rgba(255,255,255,0.06) ;
+    color: #a4a4a4;
+}
+
+
 
 swiper{
     height: 500rpx;

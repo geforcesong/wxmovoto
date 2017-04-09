@@ -1,5 +1,14 @@
 <view class="topHeader">
-    <image src="/assets/images/movoto_white.png"></image>
+    <view class="left">
+        <image src="/assets/images/movoto_white.png"></image>
+    </view>
+    
+    <view class="right" bindtap="performSearch">
+        <image src="http://mimg.movoto.com/1.7.224/novaimgs/seller/images/search-button.svg"></image>
+    </view>
+    <view class="vSearchBox">
+        <input placeholder="Search City, Zipcode ..." bindinput="updateInputText" auto-focus  />
+    </view>
 </view>
 <view class="sitemapView">
     <swiper>
