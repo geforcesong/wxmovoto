@@ -1,3 +1,6 @@
+<view class="topHeader">
+    <image src="/assets/images/movoto_white.png"></image>
+</view>
 <view class="sitemapView">
     <swiper>
         <block wx:for="{{imgUrls}}">
