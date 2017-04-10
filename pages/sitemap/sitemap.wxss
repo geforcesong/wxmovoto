@@ -1,10 +1,4 @@
-.left{
-    float: left;
-}
-
-.right{
-    float: right;
-}
+@import "../../assets/styles/framework.wxss";
 
 .topHeader{
     width: 100%;
@@ -29,7 +23,7 @@
 .topHeader .vSearchBox{
     margin-left: 210rpx;
     margin-right: 80rpx;
-    padding-top: 8rpx;
+    padding-top: 18rpx;
     background-color: rgba(255,255,255,0.06) ;
     padding-left: 8rpx;
 }
