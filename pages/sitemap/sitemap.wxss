@@ -30,15 +30,19 @@
     margin-left: 210rpx;
     margin-right: 80rpx;
     padding-top: 8rpx;
+    background-color: rgba(255,255,255,0.06) ;
+    padding-left: 8rpx;
 }
 
 .topHeader .vSearchBox input{
     height: 80rpx;
-    background-color: rgba(255,255,255,0.06) ;
-    color: #a4a4a4;
+    color: white;
 }
 
-
+.topHeader .vSearchBox .searchPlaceHolder{
+    color: white;
+    opacity: 0.6;
+}
 
 swiper{
     height: 500rpx;

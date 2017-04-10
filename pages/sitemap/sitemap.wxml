@@ -7,7 +7,7 @@
         <image src="http://mimg.movoto.com/1.7.224/novaimgs/seller/images/search-button.svg"></image>
     </view>
     <view class="vSearchBox">
-        <input placeholder="Search City, Zipcode ..." bindinput="updateInputText" auto-focus  />
+        <input placeholder="Search City, Zipcode ..."  placeholder-class="searchPlaceHolder" bindinput="updateInputText" auto-focus  />
     </view>
 </view>
 <view class="sitemapView">
