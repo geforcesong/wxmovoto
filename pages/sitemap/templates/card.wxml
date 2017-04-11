@@ -1,0 +1,5 @@
+<template name="card">
+    <view class="card">
+        <text>this is a card, {{data.name}}, I'm {{data.Age}}!</text>
+    </view>
+</template>
