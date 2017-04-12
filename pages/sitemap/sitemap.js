@@ -2,27 +2,29 @@ var PropertyFactory = require('../../factories/propertyFactory.js');
 
 Page({
   data: {
-    title: 'hello, world',
     userInput: '',
-    listings: [
-      { "name": "George", "Age": 20 },
-      { "name": "Hust", "Age": 30 }
-    ]
+    listings: []
   },
   updateInputText: function (e) {
     this.data.userInput = e.detail.value;
-    this.data.listings.push({ "name": "Hust1", "Age": 40 });
-    this.setData({
-      listings:this.data.listings
-    })
-    this.setData({
-      title:'hello earth'
-    })
+  },
+  onLoad:function(e){
+    this.performSearch();
   },
   performSearch: function (e) {
     let propertyFactory = new PropertyFactory();
-    propertyFactory.search().then((d)=>{
-      console.log(d);
+    var self = this;
+    var options = {};
+    if(this.data.userInput){
+      options.input = this.data.userInput;
+    }
+    propertyFactory.search(options).then((ret) => {
+      if (ret && ret.status && ret.status.code === 0) {
+        let listings = ret.data.listings;
+        self.setData({
+          listings: listings
+        })
+      }
     });
   }
 })

@@ -7,13 +7,12 @@
         <image src="http://mimg.movoto.com/1.7.224/novaimgs/seller/images/search-button.svg"></image>
     </view>
     <view class="vSearchBox">
-        <input placeholder="Search City, Zipcode ..."  placeholder-class="searchPlaceHolder" bindinput="updateInputText" auto-focus  />
+        <input placeholder="Search City, Zipcode ..."  placeholder-class="searchPlaceHolder" bindinput="updateInputText"  />
     </view>
 </view>
 <view class="sitemapView">
-    <text>{{title}}</text>
     <import src="templates/card.wxml" />
-    <block wx:for="{{listings}}" wx:for-item="i">
-        <template is="card" data="{{data:i}}" ></template>
+    <block wx:for="{{listings}}" wx:for-item="list">
+        <template is="card" data="{{data:list}}" ></template>
     </block>
 </view>

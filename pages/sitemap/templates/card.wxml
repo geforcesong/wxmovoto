@@ -1,5 +1,12 @@
 <template name="card">
     <view class="card">
-        <text>this is a card, {{data.name}}, I'm {{data.Age}}!</text>
+        <image src="{{data.tnImgPath}}"></image>
+        <view class="detail">
+            <ul>
+                <li class="price">{{data.price}}</li>
+                <li>{{data.numBedrooms}} Bd  {{data.numBathrooms}} Ba  {{data.sqftTotal}} {{data.sqftTotalUnit}}</li>
+                <li class="address">{{data.address}}, {{data.city}}</li>
+            </ul>
+        </view>
     </view>
 </template>
