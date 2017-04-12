@@ -6,7 +6,7 @@ class PropertyFactory {
     search(options) {
         options = options || {};
         return new Promise(function (resolve, reject) {
-            let postData = { "conditions": { "isDistressed": 0, "isFixerUpper": 0, "hasPhoto": 1, "searchPropertyStatus": "INACTIVE", "pageIndex": 1, "isOpenHousesOnly": 0, "minPrice": 0, "minBed": 0, "searchType": "ZIPCODE", "sortColumn": "PRICE", "maxCountPerPage": 50, "hasPool": 0, "location": { "lat": 40.7464969, "lng": -74.0094471 }, "input": "10011 New York NY", "propertyTypes": ["SINGLE_FAMILY_HOUSE", "CONDO", "MULTI_FAMILY", "LAND", "MOBILE", "OTHER"], "minBath": 0, "sortOrder": "DESC" } }
+            let postData = { "conditions": { "isDistressed": 0, "isFixerUpper": 0, "hasPhoto": 1, "searchPropertyStatus": "INACTIVE", "pageIndex": 1, "isOpenHousesOnly": 0, "minPrice": 0, "minBed": 0, "searchType": "CITY", "sortColumn": "PRICE", "maxCountPerPage": 50, "hasPool": 0, "input": "San Francisco CA", "propertyTypes": ["SINGLE_FAMILY_HOUSE", "CONDO", "MULTI_FAMILY", "LAND", "MOBILE", "OTHER"], "minBath": 0, "sortOrder": "DESC" } }
             if (options.input) {
                 postData.conditions.input = options.input;
             }
@@ -25,8 +25,8 @@ class PropertyFactory {
                     }
                     return resolve(responseData);
                 },
-                fail: function () {
-                    return resolve(null);
+                fail: function (err) {
+                    return reject(err);
                 }
             })
         });
