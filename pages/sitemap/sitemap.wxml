@@ -16,3 +16,4 @@
         <template is="card" data="{{data:list}}" ></template>
     </block>
 </view>
+<loading hidden="{{hiddenLoading}}">Loading...</loading>

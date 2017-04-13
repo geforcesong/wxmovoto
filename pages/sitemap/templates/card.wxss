@@ -10,7 +10,7 @@
 .card .detail{
     position: absolute;
     left: 0;
-    top:280rpx;
+    bottom:10rpx;
     color: white;
 }
 
