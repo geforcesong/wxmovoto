@@ -3,6 +3,7 @@ var PropertyFactory = require('../../factories/propertyFactory.js');
 Page({
   data: {
     userInput: '',
+    pageIndex: 1,
     listings: [],
     hiddenLoading: true
   },
@@ -13,21 +14,45 @@ Page({
     this.performSearch();
   },
   performSearch: function (e) {
-    let propertyFactory = new PropertyFactory();
     var self = this;
     var options = {};
     if (this.data.userInput) {
       options.input = this.data.userInput;
     }
+    self.data.pageIndex = 1;
+    self.doRealSearch(options);
+  },
+  loadBottom: function (e) {
+    console.log("fired")
+    var self =this;
+    var options = {};
+    if (this.data.userInput) {
+      options.input = this.data.userInput;
+    }
+    self.data.pageIndex++;
+    options.pageIndex = self.data.pageIndex;
+    options.mode = 'ADD';
+    self.doRealSearch(options);
+  },
+  doRealSearch(options) {
+    let propertyFactory = new PropertyFactory();
+    var self = this;
     this.setData({
       hiddenLoading: false
     })
     propertyFactory.search(options).then((ret) => {
       if (ret && ret.status && ret.status.code === 0) {
-        let listings = ret.data.listings;
-        self.setData({
-          listings: listings
-        })
+        let result = ret.data.listings;
+        if (options.mode === 'ADD') {
+          self.data.listings.concat(result);
+          self.setData({
+            listings: self.data.listings
+          })
+        } else {
+          self.setData({
+            listings: result
+          })
+        }
       }
       this.setData({
         hiddenLoading: true
