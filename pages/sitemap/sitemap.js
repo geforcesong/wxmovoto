@@ -34,6 +34,10 @@ Page({
     options.mode = 'ADD';
     self.doRealSearch(options);
   },
+  onReachBottom(e){
+    console.log('sdfsd')
+    console.log(e);
+  },
   doRealSearch(options) {
     let propertyFactory = new PropertyFactory();
     var self = this;

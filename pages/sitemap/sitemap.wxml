@@ -10,10 +10,10 @@
         <input placeholder="Search City, Zipcode ..."  placeholder-class="searchPlaceHolder" bindinput="updateInputText"  />
     </view>
 </view>
-<scroll-view class="sitemapView" scroll-y="true" bindscrolltolower="loadBottom">
+<view class="sitemapView" scroll-y="true" bindscrolltolower="loadBottom" bindscroll="scroll">
     <import src="templates/card.wxml" />
     <block wx:for="{{listings}}" wx:for-item="list">
         <template is="card" data="{{data:list}}" ></template>
     </block>
-</scroll-view>
+</view>
 <loading hidden="{{hiddenLoading}}">Loading...</loading>
