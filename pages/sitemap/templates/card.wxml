@@ -1,5 +1,5 @@
 <template name="card">
-    <view class="card">
+    <view class="card" data-url="{{data.pageUrlWithoutDomain}}" bindtap="onCardTap">
         <image src="{{data.tnImgPath}}"></image>
         <view class="detail">
             <ul>

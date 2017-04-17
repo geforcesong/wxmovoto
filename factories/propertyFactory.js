@@ -13,6 +13,7 @@ class PropertyFactory {
             if (options.pageIndex > 1) {
                 postData.conditions.pageIndex = options.pageIndex;
             }
+            postData.conditions.maxCountPerPage = options.pageSize || 50;
             let url = "https://appapi.movoto.com/api/search";
             wx.request({
                 url: url,

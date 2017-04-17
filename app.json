@@ -2,7 +2,8 @@
   "pages":[
     "pages/sitemap/sitemap",
     "pages/logs/logs",
-    "pages/index/index"
+    "pages/index/index",
+    "pages/dpp/dpp"
   ],
   "window":{
     "backgroundTextStyle":"light",

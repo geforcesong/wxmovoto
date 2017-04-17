@@ -39,3 +39,12 @@
     opacity: 0.6;
 }
 
+.loadingBottomView{
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: center;
+    width: 100%;
+    font-size: 30rpx;
+    background-color: #4c4c4c;
+    color: white;
+}
