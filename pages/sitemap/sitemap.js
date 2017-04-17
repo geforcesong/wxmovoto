@@ -11,6 +11,9 @@ Page({
   },
   updateInputText: function (e) {
     this.data.userInput = e.detail.value;
+    if (/^\d{4}$/.test(this.data.userInput)) {
+      this.data.userInput = '0' + this.data.userInput;
+    }
   },
   onLoad: function (e) {
     this.performSearch();
