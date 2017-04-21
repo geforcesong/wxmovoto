@@ -1,1 +1,18 @@
-<view class="dpp">{{url}}</view>
+<view class="dpp">
+  <view class="topSwiperView">
+    <swiper>
+      <block wx:for="{{images}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="detail">
+      <ul>
+        <li class="price">{{property.price}}</li>
+        <li>{{property.numBedrooms}} Bd {{property.numBathrooms}} Ba {{property.sqftTotal}} {{property.sqftTotalUnit}}</li>
+        <li class="address">{{property.address}}, {{property.city}}</li>
+      </ul>
+    </view>
+  </view>
+</view>

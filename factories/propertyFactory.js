@@ -27,7 +27,7 @@ class PropertyFactory {
                 },
                 success: function (res) {
                     let responseData = null;
-                    if (res) {
+                    if (res && res.data) {
                         responseData = res.data;
                     }
                     return resolve(responseData);
@@ -37,6 +37,29 @@ class PropertyFactory {
                 }
             })
         });
+    }
+
+    getProperty(url){
+        return new Promise(function(resolve, reject){
+            let requestUrl = `https://appapi.movoto.com/api/getdppdata/?url=${url}`;
+            wx.request({
+                url: requestUrl,
+                method: "GET",
+                header: {
+                    'content-type': 'application/json'
+                },
+                success: function (res) {
+                    let responseData = null;
+                    if (res && res.data && res.data.data) {
+                        responseData = res.data.data;
+                    }
+                    return resolve(responseData);
+                },
+                fail: function (err) {
+                    return reject(err);
+                }
+            })
+        })
     }
 }
 

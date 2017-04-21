@@ -1,9 +1,10 @@
 {
   "pages":[
+    "pages/dpp/dpp",
     "pages/sitemap/sitemap",
+    "pages/error/error",
     "pages/logs/logs",
-    "pages/index/index",
-    "pages/dpp/dpp"
+    "pages/index/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
