@@ -9,10 +9,10 @@ Page({
         hiddenLoading: true
     },
     onLoad: function (query) {
-        // if (!query || !query.url)
-        //     throw new Error('the url is invalid');
-        // this.setData({ url: query.url });
-        this.setData({ url: 'unincorporated-ca/100_80248785/for-sale/' });
+        if (!query || !query.url)
+            throw new Error('the url is invalid');
+        this.setData({ url: query.url });
+        // this.setData({ url: 'brooklyn-ny/9707-4th-ave-apt-5w-brooklyn-ny-11209-482_2928875/for-sale/' });
         this.setData({ hiddenLoading: false });
         let propertyFactory = new PropertyFactory();
         propertyFactory.getProperty(this.data.url).then((property) => {
@@ -42,7 +42,10 @@ Page({
     poppulateDisclaimer(property) {
         let disclaimer = property.mls.disclaimer;
         var date = new Date();
-        disclaimer = disclaimer.replace("[CURRENT_YEAR]", date.getFullYear());
+        if(disclaimer){
+            disclaimer = disclaimer.replace("[CURRENT_YEAR]", date.getFullYear());
+            disclaimer = disclaimer.replace("[TM_SUPERSCRIPT]","TM");
+        }
         this.setData({ disclaimer: disclaimer });
     },
     onCardTap(e) {

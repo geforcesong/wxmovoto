@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/dpp/dpp",
     "pages/sitemap/sitemap",
+    "pages/dpp/dpp",
     "pages/error/error",
     "pages/logs/logs",
     "pages/index/index"

@@ -1,7 +1,7 @@
 <view class="topHeader clearfix">
-    <view class="left">
-        <image src="/assets/images/movoto_white.png"></image>
-    </view>
+  <view class="left">
+    <image src="/assets/images/movoto_white.png"></image>
+  </view>
 </view>
 <view class="dpp" hidden="{{!hiddenLoading}}">
   <view class="topSwiperView">
@@ -12,6 +12,10 @@
         </swiper-item>
       </block>
     </swiper>
+    <view class="labels clearfix">
+      <import src="../common/cardLabels/cardLabels.wxml" />
+      <template is="cardLables" data="{{data:property}}"></template>
+    </view>
     <view class="detail">
       <ul>
         <li class="price">{{property.price}}</li>
@@ -39,15 +43,15 @@
     <text>Movoto last checked MLSListings for new data {{property.lastChecked}}\n\nMLSListings last updated this listing {{property.lastUpdate}}</text>
   </view>
   <view class="vNearbyHomeList box clearBorder">
-    <text class="title">Nearby Homes\n\n</text>
+    <text class="title">Nearby Homes</text><text class="small"> for {{property.address}}\n\n</text>
     <import src="../sitemap/templates/card.wxml" />
     <view wx:if="{{property.nearbyHomeList && property.nearbyHomeList.length}}">
       <block wx:for="{{property.nearbyHomeList}}" wx:for-item="list">
-          <template is="card" data="{{data:list}}"></template>
+        <template is="card" data="{{data:list}}"></template>
       </block>
     </view>
   </view>
-  <view class="box clearBorder">
+  <view wx:if="{{disclaimer}}" class="box clearBorder">
     {{disclaimer}}
   </view>
 </view>

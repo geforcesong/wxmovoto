@@ -1,0 +1,6 @@
+<template name="cardLables">
+    <ul class="cardLables">
+        <li class="{{data.isPriceReduced || data.isSold?'blue':''}}">{{data.label}}</li>
+        <li wx:if="{{data.openHouses && data.openHouses.length}}">Open</li>
+    </ul>
+</template>

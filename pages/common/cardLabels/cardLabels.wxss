@@ -1,0 +1,15 @@
+.cardLables{
+    list-style-type: none;
+}
+
+.cardLables li{
+    float: left;
+    background-color: #99b73c;
+    padding: 12rpx 8rpx;
+    color: white;
+    margin-right: 8rpx;
+}
+
+.blue{
+    background-color: #5397FF !important;
+}

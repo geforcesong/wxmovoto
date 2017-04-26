@@ -8,5 +8,9 @@
                 <li class="address">{{data.address}}, {{data.city}}</li>
             </ul>
         </view>
+        <import src="../../common/cardLabels/cardLabels.wxml" />
+        <view class="cardLabels">
+            <template is="cardLables" data="{{data:data}}"></template>
+        </view>
     </view>
 </template>

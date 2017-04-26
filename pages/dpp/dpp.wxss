@@ -1,5 +1,6 @@
 @import "../../assets/styles/framework.wxss";
 @import "../sitemap/templates/card.wxss";
+@import "../common/cardLabels/cardLabels.wxss";
 .topHeader{
     width: 100%;
     height: 100rpx;
@@ -31,11 +32,11 @@
     color: white;
 }
 
-.topSwiperView ul{
+.topSwiperView .detail ul{
     list-style: none;
 }
 
-.topSwiperView ul li{
+.topSwiperView .detail ul li{
     float: left;
     clear: left;
     font-size: 36rpx;
@@ -44,8 +45,14 @@
     padding-left: 10rpx;
 }
 
-.topSwiperView li.price{
+.topSwiperView .detail li.price{
     font-size: 50rpx;
+}
+
+.topSwiperView .labels{
+    position: absolute;
+    left: 10rpx;
+    top: 10rpx;
 }
 
 .box{
@@ -58,6 +65,11 @@
 .box .title{
     font-weight: bold;
     padding-bottom: 16rpx
+}
+
+.box .small{
+    padding-bottom: 16rpx;
+    font-size: 30rpx;
 }
 
 .mainFeature ul{

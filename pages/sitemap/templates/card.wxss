@@ -30,3 +30,9 @@
 .card li.price{
     font-size: 50rpx;
 }
+
+.card .cardLabels{
+    position: absolute;
+    left: 10rpx;
+    top: 10rpx;
+}

@@ -1,6 +1,6 @@
 @import "../../assets/styles/framework.wxss";
 @import "templates/card.wxss";
-
+@import "../common/cardLabels/cardLabels.wxss";
 .topHeader{
     width: 100%;
     height: 100rpx;
