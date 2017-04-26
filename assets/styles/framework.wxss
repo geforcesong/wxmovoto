@@ -13,3 +13,7 @@
   clear: both;
   visibility: hidden;
 }
+
+.clearBorder{
+    border-width: 0px !important;
+}

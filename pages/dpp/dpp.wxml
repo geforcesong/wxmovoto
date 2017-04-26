@@ -1,4 +1,9 @@
-<view class="dpp">
+<view class="topHeader clearfix">
+    <view class="left">
+        <image src="/assets/images/movoto_white.png"></image>
+    </view>
+</view>
+<view class="dpp" hidden="{{!hiddenLoading}}">
   <view class="topSwiperView">
     <swiper>
       <block wx:for="{{images}}">
@@ -15,4 +20,35 @@
       </ul>
     </view>
   </view>
+  <view class="box">
+    <text>{{property.description}}</text>
+  </view>
+  <view class="mainFeature box clearfix">
+    <ul>
+      <li>Zipcode: {{property.zipCode}}</li>
+      <li>Property Type: {{property.propertyType}}</li>
+      <li>Days On Movoto: {{property.daysOnMovoto}}</li>
+      <li>Year Built: {{property.yearBuilt}}</li>
+      <li>$/sqft: {{property.pricePerSqft}}</li>
+      <li>lot: {{property.lotSize}} {{property.lotSizeUnit}}</li>
+      <li>MLS#: {{property.mlsDbNumber}}</li>
+      <li>Listing Office: {{property.officeListName}}</li>
+    </ul>
+  </view>
+  <view class="box">
+    <text>Movoto last checked MLSListings for new data {{property.lastChecked}}\n\nMLSListings last updated this listing {{property.lastUpdate}}</text>
+  </view>
+  <view class="vNearbyHomeList box clearBorder">
+    <text class="title">Nearby Homes\n\n</text>
+    <import src="../sitemap/templates/card.wxml" />
+    <view wx:if="{{property.nearbyHomeList && property.nearbyHomeList.length}}">
+      <block wx:for="{{property.nearbyHomeList}}" wx:for-item="list">
+          <template is="card" data="{{data:list}}"></template>
+      </block>
+    </view>
+  </view>
+  <view class="box clearBorder">
+    {{disclaimer}}
+  </view>
 </view>
+<loading hidden="{{hiddenLoading}}">Loading...</loading>
